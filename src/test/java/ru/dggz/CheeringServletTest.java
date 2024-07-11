@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.io.IOException;
@@ -46,7 +45,7 @@ class CheeringServletTest {
 
 
     @Test
-    void HandleDoGet() throws ServletException, IOException {
+    void handleDoGet() throws IOException {
         String test_phrase = "тест";
         doReturn(test_phrase).when(manager).getRandomPhrase();
 
@@ -57,7 +56,7 @@ class CheeringServletTest {
     }
 
     @Test
-    void HandleDoPost() throws ServletException, IOException {
+    void handleDoPost() throws IOException {
         String test_phrase = "тест";
         String test_response = "Successfully added: тест";
 
